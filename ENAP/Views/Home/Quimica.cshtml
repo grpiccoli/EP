@@ -1,0 +1,1353 @@
+﻿
+@{
+    ViewData["Title"] = "Oceanografía Química";
+    var start = 2;
+    var end = 5;
+    var tablas = new string[]{
+"Porcentajes promedio de cada fracción de granulometría en las estaciones del POAL, período 1997-2017. (F= Fango, AMF=Arena Muy Fina, AF=Arena Fina, AM= Arena Media, AG= Arena Gruesa, AMG= Arena Muy Gruesa, GMF=Grava Muy Fina). Posiciones de estaciones en Figura 2.",
+"Valores de referencia de calidad de sedimento, recomendados en normativa australiana (ANZECC and ARMCANZ, 2000).",
+"Concentraciones máximas de metales pesados en sedimento (mg/Kg) en las estaciones del POAL, período 1997-2017. Posiciones de estaciones en Figura 2. Valores en gris claro exceden norma australiana en límite bajo y gris oscuro exceden la norma australiana en el límite alto.",
+"Concentraciones promedio de metales pesados en sedimento (mg/Kg) en las estaciones del POAL, período 1997-2017. Posiciones de estaciones en Figura 2. Valores en gris claro exceden norma australiana en límite bajo y gris oscuro exceden la norma australiana en el límite alto.",
+"Concentraciones promedio de hidrocarburos en sedimento en las estaciones del POAL, período 1997-2017. Posiciones de estaciones en Figura 2. Valores en gris exceden la norma australiana en límite bajo."
+    };
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    @for (var i = start; i <= end; i++)
+    {
+        <li class="nav-item">
+            <a class="nav-link" id="tabla@(i)-tab" data-toggle="tab" href="#tabla@(i)" role="tab" aria-controls="tabla@(i)" aria-selected="true">Tabla @(i)</a>
+        </li>
+    }
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade" id="tabla2" role="tabpanel" aria-labelledby="tabla2-tab">
+        <p>
+            @tablas[1]
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td width="152">
+                        <p><strong>Par&aacute;metro</strong></p>
+                    </td>
+                    <td width="72">
+                        <p><strong>unidad</strong></p>
+                    </td>
+                    <td width="110">
+                        <p><strong>ISQG Low (*)</strong></p>
+                    </td>
+                    <td width="110">
+                        <p><strong>ISQG High (*)</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" width="444">
+                        <p><strong>Metales y metaloides</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="152">
+                        <p>Ars&eacute;nico</p>
+                    </td>
+                    <td width="72">
+                        <p>mg/Kg</p>
+                    </td>
+                    <td width="110">
+                        <p>20</p>
+                    </td>
+                    <td width="110">
+                        <p>70</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="152">
+                        <p>Cadmio</p>
+                    </td>
+                    <td width="72">
+                        <p>mg/Kg</p>
+                    </td>
+                    <td width="110">
+                        <p>1,5</p>
+                    </td>
+                    <td width="110">
+                        <p>10</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="152">
+                        <p>Cromo</p>
+                    </td>
+                    <td width="72">
+                        <p>mg/Kg</p>
+                    </td>
+                    <td width="110">
+                        <p>80</p>
+                    </td>
+                    <td width="110">
+                        <p>370</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="152">
+                        <p>Cobre</p>
+                    </td>
+                    <td width="72">
+                        <p>mg/Kg</p>
+                    </td>
+                    <td width="110">
+                        <p>65</p>
+                    </td>
+                    <td width="110">
+                        <p>270</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="152">
+                        <p>Mercurio</p>
+                    </td>
+                    <td width="72">
+                        <p>mg/Kg</p>
+                    </td>
+                    <td width="110">
+                        <p>0,15</p>
+                    </td>
+                    <td width="110">
+                        <p>1</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="152">
+                        <p>N&iacute;quel</p>
+                    </td>
+                    <td width="72">
+                        <p>mg/Kg</p>
+                    </td>
+                    <td width="110">
+                        <p>21</p>
+                    </td>
+                    <td width="110">
+                        <p>52</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="152">
+                        <p>Plomo</p>
+                    </td>
+                    <td width="72">
+                        <p>mg/Kg</p>
+                    </td>
+                    <td width="110">
+                        <p>50</p>
+                    </td>
+                    <td width="110">
+                        <p>220</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="152">
+                        <p>Zinc</p>
+                    </td>
+                    <td width="72">
+                        <p>mg/Kg</p>
+                    </td>
+                    <td width="110">
+                        <p>200</p>
+                    </td>
+                    <td width="110">
+                        <p>410</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" width="444">
+                        <p><strong>Hidrocarburos </strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="152">
+                        <p>HAP total</p>
+                    </td>
+                    <td width="72">
+                        <p>&mu;g/Kg</p>
+                    </td>
+                    <td width="110">
+                        <p>4500</p>
+                    </td>
+                    <td width="110">
+                        <p>45000</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="152">
+                        <p>PCBs Total</p>
+                    </td>
+                    <td width="72">
+                        <p>&mu;g/Kg</p>
+                    </td>
+                    <td width="110">
+                        <p>23</p>
+                    </td>
+                    <td width="110">
+                        <p>---</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-pane fade" id="tabla3" role="tabpanel" aria-labelledby="tabla3-tab">
+        <p>
+            @tablas[2]
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td width="79">
+                        <p><strong>Estaci&oacute;n</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Ars&eacute;nico</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Cadmio</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Cobre</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Mercurio</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Plomo</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Zinc</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Cromo</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>8</p>
+                    </td>
+                    <td width="79">
+                        <p>4.80</p>
+                    </td>
+                    <td width="79">
+                        <p>0.20</p>
+                    </td>
+                    <td width="79">
+                        <p>49.30</p>
+                    </td>
+                    <td width="79">
+                        <p>0.05</p>
+                    </td>
+                    <td width="79">
+                        <p>4.90</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>10</p>
+                    </td>
+                    <td width="79">
+                        <p>4.21</p>
+                    </td>
+                    <td width="79">
+                        <p>5.40</p>
+                    </td>
+                    <td width="79">
+                        <p>86.18</p>
+                    </td>
+                    <td width="79">
+                        <p>2.14</p>
+                    </td>
+                    <td width="79">
+                        <p>35.36</p>
+                    </td>
+                    <td width="79">
+                        <p>73.20</p>
+                    </td>
+                    <td width="79">
+                        <p>51.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>20</p>
+                    </td>
+                    <td width="79">
+                        <p>7.80</p>
+                    </td>
+                    <td width="79">
+                        <p>15.30</p>
+                    </td>
+                    <td width="79">
+                        <p>366.61</p>
+                    </td>
+                    <td width="79">
+                        <p>0.61</p>
+                    </td>
+                    <td width="79">
+                        <p>21.14</p>
+                    </td>
+                    <td width="79">
+                        <p>86.33</p>
+                    </td>
+                    <td width="79">
+                        <p>123.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>34</p>
+                    </td>
+                    <td width="79">
+                        <p>8.67</p>
+                    </td>
+                    <td width="79">
+                        <p>0.05</p>
+                    </td>
+                    <td width="79">
+                        <p>40.10</p>
+                    </td>
+                    <td width="79">
+                        <p>0.14</p>
+                    </td>
+                    <td width="79">
+                        <p>7.20</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>38</p>
+                    </td>
+                    <td width="79">
+                        <p>9.20</p>
+                    </td>
+                    <td width="79">
+                        <p>0.05</p>
+                    </td>
+                    <td width="79">
+                        <p>202.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.12</p>
+                    </td>
+                    <td width="79">
+                        <p>7.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>50</p>
+                    </td>
+                    <td width="79">
+                        <p>7.47</p>
+                    </td>
+                    <td width="79">
+                        <p>15.50</p>
+                    </td>
+                    <td width="79">
+                        <p>600.59</p>
+                    </td>
+                    <td width="79">
+                        <p>0.40</p>
+                    </td>
+                    <td width="79">
+                        <p>30.77</p>
+                    </td>
+                    <td width="79">
+                        <p>112.31</p>
+                    </td>
+                    <td width="79">
+                        <p>33.20</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>60</p>
+                    </td>
+                    <td width="79">
+                        <p>6.50</p>
+                    </td>
+                    <td width="79">
+                        <p>15.10</p>
+                    </td>
+                    <td width="79">
+                        <p>175.73</p>
+                    </td>
+                    <td width="79">
+                        <p>0.30</p>
+                    </td>
+                    <td width="79">
+                        <p>24.69</p>
+                    </td>
+                    <td width="79">
+                        <p>47.85</p>
+                    </td>
+                    <td width="79">
+                        <p>64.45</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>90</p>
+                    </td>
+                    <td width="79">
+                        <p>8.20</p>
+                    </td>
+                    <td width="79">
+                        <p>15.40</p>
+                    </td>
+                    <td width="79">
+                        <p>299.08</p>
+                    </td>
+                    <td width="79">
+                        <p>0.30</p>
+                    </td>
+                    <td width="79">
+                        <p>23.50</p>
+                    </td>
+                    <td width="79">
+                        <p>84.62</p>
+                    </td>
+                    <td width="79">
+                        <p>43.39</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>110</p>
+                    </td>
+                    <td width="79">
+                        <p>3.80</p>
+                    </td>
+                    <td width="79">
+                        <p>5.90</p>
+                    </td>
+                    <td width="79">
+                        <p>283.07</p>
+                    </td>
+                    <td width="79">
+                        <p>0.44</p>
+                    </td>
+                    <td width="79">
+                        <p>25.38</p>
+                    </td>
+                    <td width="79">
+                        <p>213.55</p>
+                    </td>
+                    <td width="79">
+                        <p>30.27</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>122</p>
+                    </td>
+                    <td width="79">
+                        <p>7.39</p>
+                    </td>
+                    <td width="79">
+                        <p>0.05</p>
+                    </td>
+                    <td width="79">
+                        <p>51.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.08</p>
+                    </td>
+                    <td width="79">
+                        <p>7.50</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>126</p>
+                    </td>
+                    <td width="79">
+                        <p>6.80</p>
+                    </td>
+                    <td width="79">
+                        <p>0.05</p>
+                    </td>
+                    <td width="79">
+                        <p>25.30</p>
+                    </td>
+                    <td width="79">
+                        <p>0.08</p>
+                    </td>
+                    <td width="79">
+                        <p>8.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>150</p>
+                    </td>
+                    <td width="79">
+                        <p>4.58</p>
+                    </td>
+                    <td width="79">
+                        <p>3.90</p>
+                    </td>
+                    <td width="79">
+                        <p>371.67</p>
+                    </td>
+                    <td width="79">
+                        <p>0.47</p>
+                    </td>
+                    <td width="79">
+                        <p>21.95</p>
+                    </td>
+                    <td width="79">
+                        <p>86.55</p>
+                    </td>
+                    <td width="79">
+                        <p>50.80</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>170</p>
+                    </td>
+                    <td width="79">
+                        <p>5.30</p>
+                    </td>
+                    <td width="79">
+                        <p>15.30</p>
+                    </td>
+                    <td width="79">
+                        <p>271.67</p>
+                    </td>
+                    <td width="79">
+                        <p>0.69</p>
+                    </td>
+                    <td width="79">
+                        <p>24.70</p>
+                    </td>
+                    <td width="79">
+                        <p>67.20</p>
+                    </td>
+                    <td width="79">
+                        <p>31.56</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>190</p>
+                    </td>
+                    <td width="79">
+                        <p>7.50</p>
+                    </td>
+                    <td width="79">
+                        <p>12.80</p>
+                    </td>
+                    <td width="79">
+                        <p>120.55</p>
+                    </td>
+                    <td width="79">
+                        <p>0.40</p>
+                    </td>
+                    <td width="79">
+                        <p>32.01</p>
+                    </td>
+                    <td width="79">
+                        <p>61.17</p>
+                    </td>
+                    <td width="79">
+                        <p>37.18</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-pane fade" id="tabla4" role="tabpanel" aria-labelledby="tabla4-tab">
+        <p>
+            @tablas[3]
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td width="79">
+                        <p><strong>Estaci&oacute;n</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Ars&eacute;nico</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Cadmio</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Cobre</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Mercurio</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Plomo</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Zinc</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>Cromo</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>8</p>
+                    </td>
+                    <td width="79">
+                        <p>2.20</p>
+                    </td>
+                    <td width="79">
+                        <p>0.07</p>
+                    </td>
+                    <td width="79">
+                        <p>16.06</p>
+                    </td>
+                    <td width="79">
+                        <p>0.01</p>
+                    </td>
+                    <td width="79">
+                        <p>2.47</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>10</p>
+                    </td>
+                    <td width="79">
+                        <p>1.99</p>
+                    </td>
+                    <td width="79">
+                        <p>0.44</p>
+                    </td>
+                    <td width="79">
+                        <p>20.59</p>
+                    </td>
+                    <td width="79">
+                        <p>0.10</p>
+                    </td>
+                    <td width="79">
+                        <p>4.44</p>
+                    </td>
+                    <td width="79">
+                        <p>22.93</p>
+                    </td>
+                    <td width="79">
+                        <p>13.72</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>20</p>
+                    </td>
+                    <td width="79">
+                        <p>3.93</p>
+                    </td>
+                    <td width="79">
+                        <p>0.71</p>
+                    </td>
+                    <td width="79">
+                        <p>63.54</p>
+                    </td>
+                    <td width="79">
+                        <p>0.07</p>
+                    </td>
+                    <td width="79">
+                        <p>6.35</p>
+                    </td>
+                    <td width="79">
+                        <p>39.55</p>
+                    </td>
+                    <td width="79">
+                        <p>20.74</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>34</p>
+                    </td>
+                    <td width="79">
+                        <p>5.21</p>
+                    </td>
+                    <td width="79">
+                        <p>0.05</p>
+                    </td>
+                    <td width="79">
+                        <p>26.76</p>
+                    </td>
+                    <td width="79">
+                        <p>0.06</p>
+                    </td>
+                    <td width="79">
+                        <p>5.18</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>38</p>
+                    </td>
+                    <td width="79">
+                        <p>4.89</p>
+                    </td>
+                    <td width="79">
+                        <p>0.05</p>
+                    </td>
+                    <td width="79">
+                        <p>68.92</p>
+                    </td>
+                    <td width="79">
+                        <p>0.06</p>
+                    </td>
+                    <td width="79">
+                        <p>5.97</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>50</p>
+                    </td>
+                    <td width="79">
+                        <p>3.94</p>
+                    </td>
+                    <td width="79">
+                        <p>0.68</p>
+                    </td>
+                    <td width="79">
+                        <p>120.99</p>
+                    </td>
+                    <td width="79">
+                        <p>0.07</p>
+                    </td>
+                    <td width="79">
+                        <p>5.69</p>
+                    </td>
+                    <td width="79">
+                        <p>41.85</p>
+                    </td>
+                    <td width="79">
+                        <p>14.19</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>60</p>
+                    </td>
+                    <td width="79">
+                        <p>4.09</p>
+                    </td>
+                    <td width="79">
+                        <p>0.81</p>
+                    </td>
+                    <td width="79">
+                        <p>40.79</p>
+                    </td>
+                    <td width="79">
+                        <p>0.04</p>
+                    </td>
+                    <td width="79">
+                        <p>5.48</p>
+                    </td>
+                    <td width="79">
+                        <p>22.44</p>
+                    </td>
+                    <td width="79">
+                        <p>17.01</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>90</p>
+                    </td>
+                    <td width="79">
+                        <p>5.52</p>
+                    </td>
+                    <td width="79">
+                        <p>0.70</p>
+                    </td>
+                    <td width="79">
+                        <p>46.54</p>
+                    </td>
+                    <td width="79">
+                        <p>0.06</p>
+                    </td>
+                    <td width="79">
+                        <p>6.30</p>
+                    </td>
+                    <td width="79">
+                        <p>33.90</p>
+                    </td>
+                    <td width="79">
+                        <p>15.44</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>110</p>
+                    </td>
+                    <td width="79">
+                        <p>1.43</p>
+                    </td>
+                    <td width="79">
+                        <p>0.53</p>
+                    </td>
+                    <td width="79">
+                        <p>44.88</p>
+                    </td>
+                    <td width="79">
+                        <p>0.06</p>
+                    </td>
+                    <td width="79">
+                        <p>5.00</p>
+                    </td>
+                    <td width="79">
+                        <p>28.45</p>
+                    </td>
+                    <td width="79">
+                        <p>8.74</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>122</p>
+                    </td>
+                    <td width="79">
+                        <p>4.60</p>
+                    </td>
+                    <td width="79">
+                        <p>0.05</p>
+                    </td>
+                    <td width="79">
+                        <p>25.07</p>
+                    </td>
+                    <td width="79">
+                        <p>0.03</p>
+                    </td>
+                    <td width="79">
+                        <p>5.69</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>126</p>
+                    </td>
+                    <td width="79">
+                        <p>3.39</p>
+                    </td>
+                    <td width="79">
+                        <p>0.05</p>
+                    </td>
+                    <td width="79">
+                        <p>15.99</p>
+                    </td>
+                    <td width="79">
+                        <p>0.02</p>
+                    </td>
+                    <td width="79">
+                        <p>4.23</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                    <td width="79">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>150</p>
+                    </td>
+                    <td width="79">
+                        <p>2.14</p>
+                    </td>
+                    <td width="79">
+                        <p>0.36</p>
+                    </td>
+                    <td width="79">
+                        <p>34.21</p>
+                    </td>
+                    <td width="79">
+                        <p>0.06</p>
+                    </td>
+                    <td width="79">
+                        <p>4.11</p>
+                    </td>
+                    <td width="79">
+                        <p>25.75</p>
+                    </td>
+                    <td width="79">
+                        <p>11.27</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>170</p>
+                    </td>
+                    <td width="79">
+                        <p>3.36</p>
+                    </td>
+                    <td width="79">
+                        <p>0.76</p>
+                    </td>
+                    <td width="79">
+                        <p>63.06</p>
+                    </td>
+                    <td width="79">
+                        <p>0.07</p>
+                    </td>
+                    <td width="79">
+                        <p>8.63</p>
+                    </td>
+                    <td width="79">
+                        <p>37.02</p>
+                    </td>
+                    <td width="79">
+                        <p>14.03</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>190</p>
+                    </td>
+                    <td width="79">
+                        <p>4.22</p>
+                    </td>
+                    <td width="79">
+                        <p>0.60</p>
+                    </td>
+                    <td width="79">
+                        <p>27.32</p>
+                    </td>
+                    <td width="79">
+                        <p>0.05</p>
+                    </td>
+                    <td width="79">
+                        <p>6.73</p>
+                    </td>
+                    <td width="79">
+                        <p>28.02</p>
+                    </td>
+                    <td width="79">
+                        <p>15.23</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-pane fade" id="tabla5" role="tabpanel" aria-labelledby="tabla5-tab">
+        <p>
+            @tablas[4]
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td width="77">
+                        <p><strong>Estaci&oacute;n</strong></p>
+                    </td>
+                    <td width="74">
+                        <p><strong>HAP</strong></p>
+                        <p>mg/Kg</p>
+                    </td>
+                    <td width="83">
+                        <p><strong>HVC5-C10 </strong>mg/Kg</p>
+                    </td>
+                    <td width="92">
+                        <p><strong>HFC34-C50 </strong>mg/Kg</p>
+                    </td>
+                    <td width="56">
+                        <p><strong>Xileno </strong>mg/Kg</p>
+                    </td>
+                    <td width="121">
+                        <p><strong>Pentaclorofenol </strong>mg/Kg</p>
+                    </td>
+                    <td width="76">
+                        <p><strong>PCBs</strong></p>
+                        <p>&mu;g/Kg</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>8</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>143.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>10</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>173.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.10</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>20</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>190.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.10</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>34</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>110.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>38</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>200.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>50</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>107.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>25.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>60</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>170.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.10</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>90</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>180.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>25.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>110</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>100.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.10</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>122</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>120.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>126</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>145.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.00</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>150</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>226.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.10</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>170</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>170.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.10</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="77">
+                        <p>190</p>
+                    </td>
+                    <td width="74">
+                        <p>1.00</p>
+                    </td>
+                    <td width="83">
+                        <p>0.05</p>
+                    </td>
+                    <td width="92">
+                        <p>130.00</p>
+                    </td>
+                    <td width="56">
+                        <p>0.05</p>
+                    </td>
+                    <td width="121">
+                        <p>0.25</p>
+                    </td>
+                    <td width="76">
+                        <p>0.10</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

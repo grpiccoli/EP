@@ -1,0 +1,469 @@
+﻿
+@{
+    ViewData["Title"] = "Antecedentes";
+    var start = 1;
+    var end = 4;
+    var figuras = new string[]{
+"Área de estudio en Bahía de Quintero (Ref. Carta SHOA 4321). Sondas en metros. Posición 1 es la ubicación de ADCP Oceangreen de Oyarce (2009) e Inversiones San José (2010). Posición 2 es ubicación de ADCP SHOA de Arregui (2012). Posiciones 3 y 4 corresponden a los ADCP de IFOP (2016) y posición 5 es ADCP en muelle GNL.",
+"Estaciones de muestreo en sedimento del Programa de Observación del Ambiente Litoral (POAL) en el período 1997-2017.",
+"Patrón de circulación superficial según Bakovic y Balic (1984).",
+"Patrón de circulación superficial según Malet y Andrade (1991).",
+"Diagrama de vector progresivo a 3 m (Oyarce, 2009).",
+"Diagrama de vector progresivo a 9 m (Oyarce, 2009).",
+"Diagrama de vector progresivo a 16 m (Oyarce, 2009).",
+"Rosa de frecuencias de vientos en sector costero interior de muelle ENAP, durante instalación de ADCP agosto-noviembre 2006 (Oyarce, 2009).",
+"Diagrama de vector progresivo a distintas profundidades en punto 1 de figura 1. Color rojo es capa superficial y negro es de fondo (Inversiones San José, 2010).",
+"Rosa de frecuencias de vientos en sector el Bato durante instalación de ADCP septiembre-octubre 2008 (Inversiones San José, 2010).",
+"Corrientes promedio y direcciones en tres profundidades en el sector sur de terminal Oxiquim (Aquambiente, 2004).",
+"Paneles superiores son los diagramas de vector progresivo de corrientes en tres profundidades, en las dos estaciones del año, del ADCP fijo en el extremo del terminal GNL-Quintero (punto 5 de la figura 1) (IFOP, 2016). Paneles inferiores son las velocidades netas (promedio) en los mismos instrumentos. Números en rojo son profundidades de cada vector.",
+"Espectros de energía de corrientes en tres profundidades en invierno y verano, del ADCP fijo en el extremo del terminal GNL-Quintero (punto 5 de la figura 1) (IFOP, 2016). Paneles superiores son capa superficial, los intermedios son capa intermedia y los inferiores son capa de fondo.",
+"Diagrama de vector progresivo de corrientes a 2 m en ADCP ubicado en punto 2 de la Figura 1 (Arregui, 2012).",
+"Diagrama de vector progresivo de corrientes a 37 m en ADCP ubicado en punto 2 de la Figura 1 (Arregui, 2012).",
+"Paneles superiores son los diagramas de vector progresivo de corrientes en tres profundidades, en las dos estaciones del año, del ADCP fijo en sector sur de la boca de la bahía (punto 3 de la figura 1) (IFOP, 2016). Paneles inferiores son las velocidades netas (promedio) en los mismos instrumentos. Números en rojo son profundidades.",
+"Panel superior es el diagrama de vector progresivo de corrientes en tres profundidades en invierno, del ADCP fijo en sector norte de la boca de la bahía (punto 4 de la figura 1) (IFOP, 2016). Panel inferior son las velocidades netas (promedio) en el mismo instrumento. Números en rojo son profundidades.",
+"Espectros de energía de corrientes en tres profundidades en invierno y verano, del ADCP fijo en sector sur de la boca de la bahía (punto 3 de la figura 1) (IFOP, 2016). Paneles superiores son capa superficial, los intermedios son capa intermedia y los inferiores son capa de fondo.",
+"Espectros de energía de corrientes en tres profundidades en invierno, del ADCP fijo en sector norte de la boca de la bahía (punto 4 de la figura 1) (IFOP, 2016). Panel superior es capa superficial, intermedio es capa intermedia y el inferior es capa de fondo.",
+"Trayectoria de derivadores según Escobar et al., 1971.",
+"Posiciones de liberación de derivadores del Monitoreo 1 del PVA de la Unidad Ventanas.",
+"Ciclo de vida de Lessonia trabeculata (Manual de cultivo de macroalgas pardas: desde el laboratorio al océano).",
+"Fronda reproductiva de Lessonia trabeculata con su soro esporangial maduro en el ovalo de colo rojo en el centro de la lámina.",
+"Enjuague y lavado de las frondas reproductivas con agua de mar filtrada y estéril.",
+"inoculación del sustrato artificial con la solución de zoosporas (sacado del Manual de algas pardas).",
+"Sala aclimatada para el cultivo de algas pardas en botellas y bidones plásticos.",
+"Esporofitos encordados entre capas de esponja humedecidas con agua de mar, listos para traslado.",
+"Repoblamiento de Lessonia berteroana mediante la fijación de esporofitos en unidades de plástico en la zona intermareal baja, en la Región de Antofagasta (Fondef D13 R20015).",
+"Distribución teórica de unidades según técnica de repoblamiento a utilizar.",
+"Esquema Metodológico Taller.",
+"Mural en Caleta El Manzano.",
+"Reunión con organizaciones de pescadores de la Comuna de Quintero. 21 de noviembre 2018.",
+"A) Gametofitos diferenciados círculo rojo muestra gametofitos femeninos y círculo azul gametofitos masculinos; B) Gametofitos de M. pyrifera en estado inicial de desarrollo.",
+"Cultivos de M. pyrifera A) Célula huevo recién fecundada; B) Esporofito inicial; C) Gametofitos y esporofitos en diferentes grados de desarrollo.",
+"Esporofitos de Macrocystis pyrifera en diferentes estadios de desarrollo. Tamaño promedio > 1mm.",
+"Desarrollo de gametofitos y esporofitos de Lessonia trabeculata en laboratorio. A. Gametofito indiferenciado; B Célula huevo; C) Esporofito inicial; D) Esporofitos desarrollados.",
+"Cultivos de la fase microscópica de L trabeculata    A) Esporofitos de 1 mm; B) Esporofitos con aireación en matraces de 1L; C) Esporofitos de mayor tamaño; D) Desdoble de esporofitos de vida libre en mayor volumen de agua."
+    };
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    @for (var i = start; i <= end; i++)
+    {
+        <li class="nav-item">
+            <a class="nav-link" id="figura@(i)-tab" data-toggle="tab" href="#figura@(i)" role="tab" aria-controls="figura@(i)" aria-selected="true">Figura @(i)</a>
+        </li>
+    }
+    <li class="nav-item">
+        <a class="nav-link" id="tabla1-tab" data-toggle="tab" href="#tabla1" role="tab" aria-controls="tabla1" aria-selected="false">Tabla 1</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    @for (var i = start; i <= end; i++)
+    {
+        <div class="tab-pane fade" id="figura@(i)" role="tabpanel" aria-labelledby="figura@(i)-tab">
+            <p>
+                @figuras[i - start]
+            </p>
+            <img style="max-width:100%;max-height:80vh" src="~/figura@(i).png" asp-append-version="true"/>
+        </div>
+    }
+    <div class="tab-pane fade" id="tabla1" role="tabpanel" aria-labelledby="tabla1-tab">
+        <p>
+            Porcentajes promedio de cada fracción de granulometría en las estaciones del POAL, período 1997-2017. (F= Fango, AMF=Arena Muy Fina, AF=Arena Fina, AM= Arena Media, AG= Arena Gruesa, AMG= Arena Muy Gruesa, GMF=Grava Muy Fina). Posiciones de estaciones en Figura 2.
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td width="79">
+                        <p><strong>Estaci&oacute;n</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>F</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>AMF</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>AF</strong></p>
+                    </td>
+                    <td width="79"> 
+                        <p><strong>AM</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>AG</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>AMG</strong></p>
+                    </td>
+                    <td width="79">
+                        <p><strong>GMF</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>8</p>
+                    </td>
+                    <td width="79">
+                        <p>3,8</p>
+                    </td>
+                    <td width="79">
+                        <p>25,1</p>
+                    </td>
+                    <td width="79">
+                        <p>21,9</p>
+                    </td>
+                    <td width="79">
+                        <p>15,8</p>
+                    </td>
+                    <td width="79">
+                        <p>14,5</p>
+                    </td>
+                    <td width="79">
+                        <p>17,0</p>
+                    </td>
+                    <td width="79">
+                        <p>2,1</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>10</p>
+                    </td>
+                    <td width="79">
+                        <p>3,9</p>
+                    </td>
+                    <td width="79">
+                        <p>12,8</p>
+                    </td>
+                    <td width="79">
+                        <p>18,3</p>
+                    </td>
+                    <td width="79">
+                        <p>10,7</p>
+                    </td>
+                    <td width="79">
+                        <p>19,5</p>
+                    </td>
+                    <td width="79">
+                        <p>24,8</p>
+                    </td>
+                    <td width="79">
+                        <p>9,9</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>20</p>
+                    </td>
+                    <td width="79">
+                        <p>24,2</p>
+                    </td>
+                    <td width="79">
+                        <p>41,4</p>
+                    </td>
+                    <td width="79">
+                        <p>9,1</p>
+                    </td>
+                    <td width="79">
+                        <p>4,7</p>
+                    </td>
+                    <td width="79">
+                        <p>2,0</p>
+                    </td>
+                    <td width="79">
+                        <p>7,5</p>
+                    </td>
+                    <td width="79">
+                        <p>11,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>34</p>
+                    </td>
+                    <td width="79">
+                        <p>14,7</p>
+                    </td>
+                    <td width="79">
+                        <p>41,2</p>
+                    </td>
+                    <td width="79">
+                        <p>26,3</p>
+                    </td>
+                    <td width="79">
+                        <p>16,7</p>
+                    </td>
+                    <td width="79">
+                        <p>0,4</p>
+                    </td>
+                    <td width="79">
+                        <p>0,0</p>
+                    </td>
+                    <td width="79">
+                        <p>0,6</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>38</p>
+                    </td>
+                    <td width="79">
+                        <p>27,6</p>
+                    </td>
+                    <td width="79">
+                        <p>32,4</p>
+                    </td>
+                    <td width="79">
+                        <p>26,5</p>
+                    </td>
+                    <td width="79">
+                        <p>12,2</p>
+                    </td>
+                    <td width="79">
+                        <p>0,1</p>
+                    </td>
+                    <td width="79">
+                        <p>0,1</p>
+                    </td>
+                    <td width="79">
+                        <p>1,1</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>50</p>
+                    </td>
+                    <td width="79">
+                        <p>7,8</p>
+                    </td>
+                    <td width="79">
+                        <p>24,3</p>
+                    </td>
+                    <td width="79">
+                        <p>24,8</p>
+                    </td>
+                    <td width="79">
+                        <p>17,9</p>
+                    </td>
+                    <td width="79">
+                        <p>7,7</p>
+                    </td>
+                    <td width="79">
+                        <p>10,8</p>
+                    </td>
+                    <td width="79">
+                        <p>6,7</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>60</p>
+                    </td>
+                    <td width="79">
+                        <p>20,6</p>
+                    </td>
+                    <td width="79">
+                        <p>32,5</p>
+                    </td>
+                    <td width="79">
+                        <p>31,2</p>
+                    </td>
+                    <td width="79">
+                        <p>11,6</p>
+                    </td>
+                    <td width="79">
+                        <p>1,7</p>
+                    </td>
+                    <td width="79">
+                        <p>0,4</p>
+                    </td>
+                    <td width="79">
+                        <p>2,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>90</p>
+                    </td>
+                    <td width="79">
+                        <p>23,0</p>
+                    </td>
+                    <td width="79">
+                        <p>26,5</p>
+                    </td>
+                    <td width="79">
+                        <p>30,3</p>
+                    </td>
+                    <td width="79">
+                        <p>17,6</p>
+                    </td>
+                    <td width="79">
+                        <p>0,8</p>
+                    </td>
+                    <td width="79">
+                        <p>0,2</p>
+                    </td>
+                    <td width="79">
+                        <p>1,5</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>110</p>
+                    </td>
+                    <td width="79">
+                        <p>2,7</p>
+                    </td>
+                    <td width="79">
+                        <p>12,6</p>
+                    </td>
+                    <td width="79">
+                        <p>22,5</p>
+                    </td>
+                    <td width="79">
+                        <p>18,9</p>
+                    </td>
+                    <td width="79">
+                        <p>18,9</p>
+                    </td>
+                    <td width="79">
+                        <p>16,1</p>
+                    </td>
+                    <td width="79">
+                        <p>8,5</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>122</p>
+                    </td>
+                    <td width="79">
+                        <p>19,2</p>
+                    </td>
+                    <td width="79">
+                        <p>32,3</p>
+                    </td>
+                    <td width="79">
+                        <p>30,6</p>
+                    </td>
+                    <td width="79">
+                        <p>8,9</p>
+                    </td>
+                    <td width="79">
+                        <p>5,2</p>
+                    </td>
+                    <td width="79">
+                        <p>1,6</p>
+                    </td>
+                    <td width="79">
+                        <p>2,3</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>126</p>
+                    </td>
+                    <td width="79">
+                        <p>9,1</p>
+                    </td>
+                    <td width="79">
+                        <p>16,7</p>
+                    </td>
+                    <td width="79">
+                        <p>26,1</p>
+                    </td>
+                    <td width="79">
+                        <p>22,4</p>
+                    </td>
+                    <td width="79">
+                        <p>13,8</p>
+                    </td>
+                    <td width="79">
+                        <p>10,2</p>
+                    </td>
+                    <td width="79">
+                        <p>1,7</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>150</p>
+                    </td>
+                    <td width="79">
+                        <p>13,7</p>
+                    </td>
+                    <td width="79">
+                        <p>8,3</p>
+                    </td>
+                    <td width="79">
+                        <p>15,8</p>
+                    </td>
+                    <td width="79">
+                        <p>9,1</p>
+                    </td>
+                    <td width="79">
+                        <p>19,9</p>
+                    </td>
+                    <td width="79">
+                        <p>17,8</p>
+                    </td>
+                    <td width="79">
+                        <p>15,4</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>170</p>
+                    </td>
+                    <td width="79">
+                        <p>20,9</p>
+                    </td>
+                    <td width="79">
+                        <p>34,4</p>
+                    </td>
+                    <td width="79">
+                        <p>27,9</p>
+                    </td>
+                    <td width="79">
+                        <p>13,8</p>
+                    </td>
+                    <td width="79">
+                        <p>1,4</p>
+                    </td>
+                    <td width="79">
+                        <p>0,7</p>
+                    </td>
+                    <td width="79">
+                        <p>1,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="79">
+                        <p>190</p>
+                    </td>
+                    <td width="79">
+                        <p>13,3</p>
+                    </td>
+                    <td width="79">
+                        <p>29,2</p>
+                    </td>
+                    <td width="79">
+                        <p>28,9</p>
+                    </td>
+                    <td width="79">
+                        <p>19,2</p>
+                    </td>
+                    <td width="79">
+                        <p>5,4</p>
+                    </td>
+                    <td width="79">
+                        <p>3,2</p>
+                    </td>
+                    <td width="79">
+                        <p>0,8</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

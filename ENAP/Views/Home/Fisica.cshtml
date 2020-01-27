@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewData["Title"] = "Oceanografía Física";
+    var start = 5;
+    var end = 21;
+        var figuras = new string[]{
+"Área de estudio en Bahía de Quintero (Ref. Carta SHOA 4321). Sondas en metros. Posición 1 es la ubicación de ADCP Oceangreen de Oyarce (2009) e Inversiones San José (2010). Posición 2 es ubicación de ADCP SHOA de Arregui (2012). Posiciones 3 y 4 corresponden a los ADCP de IFOP (2016) y posición 5 es ADCP en muelle GNL.",
+"Estaciones de muestreo en sedimento del Programa de Observación del Ambiente Litoral (POAL) en el período 1997-2017.",
+"Patrón de circulación superficial según Bakovic y Balic (1984).",
+"Patrón de circulación superficial según Malet y Andrade (1991).",
+"Diagrama de vector progresivo a 3 m (Oyarce, 2009).",
+"Diagrama de vector progresivo a 9 m (Oyarce, 2009).",
+"Diagrama de vector progresivo a 16 m (Oyarce, 2009).",
+"Rosa de frecuencias de vientos en sector costero interior de muelle ENAP, durante instalación de ADCP agosto-noviembre 2006 (Oyarce, 2009).",
+"Diagrama de vector progresivo a distintas profundidades en punto 1 de figura 1. Color rojo es capa superficial y negro es de fondo (Inversiones San José, 2010).",
+"Rosa de frecuencias de vientos en sector el Bato durante instalación de ADCP septiembre-octubre 2008 (Inversiones San José, 2010).",
+"Corrientes promedio y direcciones en tres profundidades en el sector sur de terminal Oxiquim (Aquambiente, 2004).",
+"Paneles superiores son los diagramas de vector progresivo de corrientes en tres profundidades, en las dos estaciones del año, del ADCP fijo en el extremo del terminal GNL-Quintero (punto 5 de la figura 1) (IFOP, 2016). Paneles inferiores son las velocidades netas (promedio) en los mismos instrumentos. Números en rojo son profundidades de cada vector.",
+"Espectros de energía de corrientes en tres profundidades en invierno y verano, del ADCP fijo en el extremo del terminal GNL-Quintero (punto 5 de la figura 1) (IFOP, 2016). Paneles superiores son capa superficial, los intermedios son capa intermedia y los inferiores son capa de fondo.",
+"Diagrama de vector progresivo de corrientes a 2 m en ADCP ubicado en punto 2 de la Figura 1 (Arregui, 2012).",
+"Diagrama de vector progresivo de corrientes a 37 m en ADCP ubicado en punto 2 de la Figura 1 (Arregui, 2012).",
+"Paneles superiores son los diagramas de vector progresivo de corrientes en tres profundidades, en las dos estaciones del año, del ADCP fijo en sector sur de la boca de la bahía (punto 3 de la figura 1) (IFOP, 2016). Paneles inferiores son las velocidades netas (promedio) en los mismos instrumentos. Números en rojo son profundidades.",
+"Panel superior es el diagrama de vector progresivo de corrientes en tres profundidades en invierno, del ADCP fijo en sector norte de la boca de la bahía (punto 4 de la figura 1) (IFOP, 2016). Panel inferior son las velocidades netas (promedio) en el mismo instrumento. Números en rojo son profundidades.",
+"Espectros de energía de corrientes en tres profundidades en invierno y verano, del ADCP fijo en sector sur de la boca de la bahía (punto 3 de la figura 1) (IFOP, 2016). Paneles superiores son capa superficial, los intermedios son capa intermedia y los inferiores son capa de fondo.",
+"Espectros de energía de corrientes en tres profundidades en invierno, del ADCP fijo en sector norte de la boca de la bahía (punto 4 de la figura 1) (IFOP, 2016). Panel superior es capa superficial, intermedio es capa intermedia y el inferior es capa de fondo.",
+"Trayectoria de derivadores según Escobar et al., 1971.",
+"Posiciones de liberación de derivadores del Monitoreo 1 del PVA de la Unidad Ventanas.",
+"Ciclo de vida de Lessonia trabeculata (Manual de cultivo de macroalgas pardas: desde el laboratorio al océano).",
+"Fronda reproductiva de Lessonia trabeculata con su soro esporangial maduro en el ovalo de colo rojo en el centro de la lámina.",
+"Enjuague y lavado de las frondas reproductivas con agua de mar filtrada y estéril.",
+"inoculación del sustrato artificial con la solución de zoosporas (sacado del Manual de algas pardas).",
+"Sala aclimatada para el cultivo de algas pardas en botellas y bidones plásticos.",
+"Esporofitos encordados entre capas de esponja humedecidas con agua de mar, listos para traslado.",
+"Repoblamiento de Lessonia berteroana mediante la fijación de esporofitos en unidades de plástico en la zona intermareal baja, en la Región de Antofagasta (Fondef D13 R20015).",
+"Distribución teórica de unidades según técnica de repoblamiento a utilizar.",
+"Esquema Metodológico Taller.",
+"Mural en Caleta El Manzano.",
+"Reunión con organizaciones de pescadores de la Comuna de Quintero. 21 de noviembre 2018.",
+"A) Gametofitos diferenciados círculo rojo muestra gametofitos femeninos y círculo azul gametofitos masculinos; B) Gametofitos de M. pyrifera en estado inicial de desarrollo.",
+"Cultivos de M. pyrifera A) Célula huevo recién fecundada; B) Esporofito inicial; C) Gametofitos y esporofitos en diferentes grados de desarrollo.",
+"Esporofitos de Macrocystis pyrifera en diferentes estadios de desarrollo. Tamaño promedio > 1mm.",
+"Desarrollo de gametofitos y esporofitos de Lessonia trabeculata en laboratorio. A. Gametofito indiferenciado; B Célula huevo; C) Esporofito inicial; D) Esporofitos desarrollados.",
+"Cultivos de la fase microscópica de L trabeculata    A) Esporofitos de 1 mm; B) Esporofitos con aireación en matraces de 1L; C) Esporofitos de mayor tamaño; D) Desdoble de esporofitos de vida libre en mayor volumen de agua."
+    };
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    @for (var i = start; i <= end; i++)
+    {
+        <li class="nav-item">
+            <a class="nav-link" id="figura@(i)-tab" data-toggle="tab" href="#figura@(i)" role="tab" aria-controls="figura@(i)" aria-selected="true">Figura @(i)</a>
+        </li>
+    }
+</ul>
+<div class="tab-content" id="myTabContent">
+    @for (var i = start; i <= end; i++)
+    {
+        <div class="tab-pane fade" id="figura@(i)" role="tabpanel" aria-labelledby="figura@(i)-tab">
+            <p>
+                @figuras[i-start]
+            </p>
+            <img style="max-width:100%;max-height:80vh" src="~/figura@(i).png" asp-append-version="true"/>
+        </div>
+    }
+</div>
