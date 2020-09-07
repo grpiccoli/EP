@@ -38,7 +38,7 @@ namespace ENAP.Controllers
         {
             return View();
         }
-        public IActionResult Arrefices()
+        public IActionResult Arrecifes()
         {
             return View();
         }
